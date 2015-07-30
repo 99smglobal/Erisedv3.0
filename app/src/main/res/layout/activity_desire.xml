@@ -18,6 +18,7 @@
     android:layout_alignParentEnd="true"
     android:layout_centerInParent="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <LinearLayout
         android:id="@+id/scroll_vertical"
         android:orientation="vertical"
@@ -26,12 +27,7 @@
 
         >
 
-      <!--  <TextView android:id="@+id/test1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World"></TextView> -->
         </LinearLayout>
-
 
 
 </ScrollView>
