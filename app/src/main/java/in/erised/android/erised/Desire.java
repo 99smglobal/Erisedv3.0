@@ -1,5 +1,6 @@
 package in.erised.android.erised;
 
+import android.content.Context;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 public class Desire extends ActionBarActivity {
@@ -16,14 +19,34 @@ public class Desire extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desire);
-       // ActionBar a = getSupportActionBar();
+        // ActionBar a = getSupportActionBar();
         LinearLayout ll = (LinearLayout) findViewById(R.id.header);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.custom_header);
         getSupportActionBar().setIcon(R.drawable.icon);
 
-
+        LayoutPopulator();
     }
+
+    void LayoutPopulator() {
+        String[] tagItem = {"Shirts", "Suits"};
+        String[] tagItem2 = {"Jeans", "Pants"};
+        LinearLayout populatingLayout = (LinearLayout) findViewById(R.id.scroll_vertical);
+
+        int size = tagItem.length;
+
+        LayoutInflater li = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        for (int i = 0; i < size; i++) {
+            View tempView = li.inflate(R.layout.populator, null);
+            TextView textMain = (TextView) tempView.findViewById(R.id.choice1);
+TextView textChoice2 = (TextView) tempView.findViewById(R.id.choice2);
+            textMain.setText(tagItem[i]);
+            textChoice2.setText(tagItem2[i]);
+            populatingLayout.addView(tempView);
+        }
+    }
+
 
 
     @Override

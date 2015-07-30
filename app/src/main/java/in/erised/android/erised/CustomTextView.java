@@ -1,6 +1,7 @@
 package in.erised.android.erised;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
@@ -27,9 +28,10 @@ public class CustomTextView extends TextView {
         super(context, attrs, defStyle);
 
         if (mTypeface == null) {
-            mTypeface = Typeface.createFromAsset(getContext().getAssets(),"fonts/HelveticaNeue-CondensedBlack.ttf");
+            mTypeface = Typeface.createFromAsset(getContext().getAssets(),"fonts/ufonts.com_maiandra-gd.ttf");
         }
         setTypeface(mTypeface);
+        setTextColor(Color.BLACK);
     }
 
 }
