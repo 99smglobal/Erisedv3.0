@@ -69,13 +69,13 @@ public class Desire extends ActionBarActivity {
             int lmargin= ((lrmargin)/2);
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.setMargins(lmargin, 0, 0, 0);
+            params.setMargins(lmargin,10, 0, 10);
             textMain.setLayoutParams(params);
-/*
-            RelativeLayout.LayoutParams param2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
-            param2.setMargins(10,10,10,10);
+
+            LinearLayout.LayoutParams param2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+            param2.setMargins(10,10,0,10);
             textChoice2.setLayoutParams(param2);
-            */
+
             //textMain.setText(""+lmargin);
 
         }
