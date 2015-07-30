@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import static java.lang.Thread.sleep;
+
 
 public class Desire extends ActionBarActivity {
 
@@ -42,52 +44,78 @@ public class Desire extends ActionBarActivity {
         String[] tagItem2 = {"Jeans-Men", "Pants-Men" ,"Jeans-Women","Pants-Women", "Nightwear-Women" ,"Nightwear-Kids", "Shorts-Guys" ,
                 "CasualShoes-Men" ,"SportsShoes-Men" ,"T-Shirts Men", "Floaters","T-Shirts Kids", "Bracelets","EthnicWear-Women",
         "Artificial Jewellery", "Sportswear","Bags", "Sunglasses", "Cosmetics","Undergarments-Men","Undergarments-Women"};
+
+        int i, size = tagItem.length;
+
         LinearLayout  populatingLayout = (LinearLayout) findViewById(R.id.scroll_vertical);
-
-        int size = tagItem.length;
-
         LayoutInflater li = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        Display display = getWindowManager().getDefaultDisplay();
-        Point screenSize = new Point();
-        display.getSize(screenSize);
-        int width = screenSize.x;
-        int height = screenSize.y;
-
-        for (int i = 0; i < size; i++) {
-            View tempView = li.inflate(R.layout.populator, null);
-            TextView textMain = (TextView) tempView.findViewById(R.id.choice1);
-            TextView textChoice2 = (TextView) tempView.findViewById(R.id.choice2);
-            textMain.setText(tagItem[i]);
-            textChoice2.setText(tagItem2[i]);
-            populatingLayout.addView(tempView);
-
-            textMain.measure(TextView.MeasureSpec.UNSPECIFIED, TextView.MeasureSpec.UNSPECIFIED);
-            textChoice2.measure(TextView.MeasureSpec.UNSPECIFIED,TextView.MeasureSpec.UNSPECIFIED);
-            int boxh1= textMain.getHeight() ;
-            int boxh2 = textChoice2.getHeight();
-            int boxw1= textMain.getMeasuredWidth();
-            int boxw2= textChoice2.getMeasuredWidth();
-
-            int lrmargin = (int) (width-(boxw1+boxw2));
-            int lmargin= ((lrmargin)/2);
-
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.setMargins(lmargin,10, 0, 10);
-            textMain.setLayoutParams(params);
-
-            LinearLayout.LayoutParams param2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-            param2.setMargins(10,10,0,10);
-            textChoice2.setLayoutParams(param2);
-
+              for ( i = 0; i < size; i++) {
             //textMain.setText(""+lmargin);
+                  Display display = getWindowManager().getDefaultDisplay();
+                  Point screenSize = new Point();
+                  display.getSize(screenSize);
+                  int width = screenSize.x;
+                  int height = screenSize.y;
 
+                  View tempView = li.inflate(R.layout.populator, null);
+
+                  TextView textMain = (TextView) tempView.findViewById(R.id.choice1);
+                  TextView textChoice2 = (TextView) tempView.findViewById(R.id.choice2);
+
+                  textMain.setText(tagItem[i]);
+                  textChoice2.setText(tagItem2[i]);
+                  populatingLayout.addView(tempView);
+
+                  textMain.measure(TextView.MeasureSpec.UNSPECIFIED, TextView.MeasureSpec.UNSPECIFIED);
+                  textChoice2.measure(TextView.MeasureSpec.UNSPECIFIED,TextView.MeasureSpec.UNSPECIFIED);
+                  int boxh1= textMain.getHeight() ;
+                  int boxh2 = textChoice2.getHeight();
+                  int boxw1= textMain.getMeasuredWidth();
+                  int boxw2= textChoice2.getMeasuredWidth();
+                  int space = width/20;
+                  int lrmargin = (width-(boxw1+boxw2+space));
+                  int lmargin= ((lrmargin)/2);
+
+                  LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                  params.setMargins(lmargin,space, 0,space);
+                  textMain.setLayoutParams(params);
+
+                  LinearLayout.LayoutParams param2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                  param2.setMargins(space,space,0,space);
+                  textChoice2.setLayoutParams(param2);
+
+
+              }
+}
+ /*   private class AppWait implements Runnable{
+int i;
+        String tagItem, tagItem2;
+
+        public  AppWait(String s1, String s2, int pos)
+        {
+            tagItem=s1;
+            tagItem2 =s2;
+            i=pos;
+        }
+        @Override
+        public void run() {
+
+            try {
+                sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                }
+            });
         }
     }
-
-
-
-    @Override
+   */
+   @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_desire, menu);
