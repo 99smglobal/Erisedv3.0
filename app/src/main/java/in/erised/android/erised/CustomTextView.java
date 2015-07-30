@@ -30,8 +30,12 @@ public class CustomTextView extends TextView {
         if (mTypeface == null) {
             mTypeface = Typeface.createFromAsset(getContext().getAssets(),"fonts/ufonts.com_maiandra-gd.ttf");
         }
+
         setTypeface(mTypeface);
         setTextColor(Color.BLACK);
+        setBackgroundResource(R.drawable.back);
+        setTextSize(20);
+        setPadding(10,10,10,10);
     }
 
 }
