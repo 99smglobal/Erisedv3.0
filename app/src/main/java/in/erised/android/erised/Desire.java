@@ -1,9 +1,11 @@
 package in.erised.android.erised;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 
 public class Desire extends ActionBarActivity {
 
+    //int w, h;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,8 @@ public class Desire extends ActionBarActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.custom_header);
         getSupportActionBar().setIcon(R.drawable.icon);
+
+
 
         LayoutPopulator();
     }
@@ -44,6 +49,7 @@ TextView textChoice2 = (TextView) tempView.findViewById(R.id.choice2);
             textMain.setText(tagItem[i]);
             textChoice2.setText(tagItem2[i]);
             populatingLayout.addView(tempView);
+
         }
     }
 
