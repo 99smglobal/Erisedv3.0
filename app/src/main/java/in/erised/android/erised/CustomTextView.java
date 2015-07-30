@@ -32,6 +32,7 @@ public class CustomTextView extends TextView {
         }
         setTypeface(mTypeface);
         setTextColor(Color.BLACK);
+        setTextSize(20);
     }
 
 }
