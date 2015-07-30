@@ -33,7 +33,7 @@ public class CustomTextView extends TextView {
         setTypeface(mTypeface);
 
         setTextColor(Color.parseColor("#ffffff"));
-        setTextSize(25);
+        setTextSize(18);
         setBackgroundResource(R.drawable.back);
         setPadding(4,2,4,2);
     }

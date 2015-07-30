@@ -36,8 +36,12 @@ public class Desire extends ActionBarActivity {
     }
 
     void LayoutPopulator() {
-        String[] tagItem = {"Shirts", "Suits", "dsfdfdggdgfdgg","Shoes"};
-        String[] tagItem2 = {"Jeans", "Pants" ,"",""};
+        String[] tagItem = {"Shirts-Men", "Suits-Men", "Shirts-Women","Suits-Men", "Sarees", "Kurtis",
+        "OnePiece-Women","Shoes-Kids","Heels", "Flippers", "T-Shirts Women", "Watches" , "Watches-Kids","EthnicWear-Men",
+        "DesignerWear-Men", "DesignerWear-Women","Purse", "Wallets", "Tie & Belts","Salvaars", "Handbags"};
+        String[] tagItem2 = {"Jeans-Men", "Pants-Men" ,"Jeans-Women","Pants-Women", "Nightwear-Women" ,"Nightwear-Kids", "Shorts-Guys" ,
+                "CasualShoes-Men" ,"SportsShoes-Men" ,"T-Shirts Men", "Floaters","T-Shirts Kids", "Bracelets","EthnicWear-Women",
+        "Artificial Jewellery", "Sportswear","Bags", "Sunglasses", "Cosmetics","Undergarments-Men","Undergarments-Women"};
         LinearLayout  populatingLayout = (LinearLayout) findViewById(R.id.scroll_vertical);
 
         int size = tagItem.length;
