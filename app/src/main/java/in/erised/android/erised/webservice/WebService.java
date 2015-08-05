@@ -75,7 +75,7 @@ public class WebService {
      * and it will return status code and string response.
      */
     public void doRequestwithGET(final String tag, String url, final RequestListener listener, boolean ShowDialog) {
-        volleyJsonRequest(tag, Request.Method.GET, url, null, listener, ShowDialog);
+        volleyJsonRequest(tag, Request.Method.GET, url, new JSONObject(), listener, ShowDialog);
     }
 
     /**
