@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:theme="@style/MaterialTheme">
         <activity
-            android:name=".Desire"
+            android:name=".ShopActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
