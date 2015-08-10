@@ -18,6 +18,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    repositories {
+        mavenCentral()
+    }
 }
 
 dependencies {
@@ -29,5 +32,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.google.android.gms:play-services:7.5.0'
     compile 'com.android.support:design:22.2.1'
-    compile files('libs/ShopDetail-sources.jar')
+    compile 'com.facebook.android:facebook-android-sdk:4.1.0'
 }
